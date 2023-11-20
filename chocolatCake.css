@@ -1,0 +1,253 @@
+body{
+    background-color: rgb(192, 144, 236);
+    ;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p.recipe { /*on aurait pu enlever le p. On peut aussi mettre une virgule et ajouter d'autre block*/
+    text-align: center;
+    background-color: black;
+    color: white;
+    display : inline-block; /*par défault les paragraphes s'affichent en block et il occupe toute la ligne ex : display block*/
+    /* en mettant inline-block on dit au paragraphe q'il doit occuper que la place necessaire. Le spam est en mode inline par défault*/
+    margin-top: 40px;  
+    margin-bottom: 0px; /*pour que le "recipe" colle au contain. Si on met -25px ici ça ne marchera pas parce qu'il est dans le div et ne peut
+                        pas déborder donc faut aller faut le mettre dans div.recipe*/ 
+    padding: 5px 15px 5px 15px;  
+    font-weight:600;   
+    font-size: large;       
+}
+
+div.recipe{
+    text-align: center;
+    margin-bottom: -15px;/*pour écrire en gras*/
+}
+
+div.contain { 
+    background-color: white;
+    margin: 0px 8px 10px 8px; /*c'est la marge en dehors de la div* haut, droite, bas, gauche. On met des % quand on veut que la marge s'adapte à la page*/
+    padding: 8px;/*les marges à l'interieur de la div, sur tout le contour.*/
+    box-shadow: 0px 0px 50px 1px white; /* ombre */
+}
+
+h1{
+    text-align:center;   
+}
+
+hr{
+    margin-top: 30px;
+    max-width: 200px;
+    border: 1px solid;
+}
+
+p.description {
+    text-align: center;
+    max-width: 400px;/*pour qu'il reste toujours sur deux lignes. Peut importe la taille de la page. C'est la taille maximum qu'il peut prendre*/
+    /*mais a cause de ça il n'est plus au milieu mais a gauche de la page. Mais est bien au milieu de p donc faut mettre le display*/
+    /*et il faut aussi ajouter la div qui est en bas pour mettre le text au centre*/
+    /*background-color: yellow;*/
+    display: inline-block;
+    font-style: italic;
+}
+
+div.description {
+   text-align: center;
+   /*background-color: blue;*//*la div dans laquelle est le p de description*/
+   
+}
+
+.imageEtTable{
+   position : relative; /*permet de reposition mais il faut utiliser avec top : 10px eccetera par ex*/
+                        /*ou grace à ça on peut utiliser position : absolute dans les éléments enfants*/
+    /*min-width: 350px;/*Pour que la table ne depasse pas quand on diminu la fenêtre*/
+   
+   /* top : -40px;*/
+   
+}
+
+.image{
+    width: 100%;/*ca va prendre 100% de l'espace sur la fenêtre*/
+    display: block;/*si on ne met pas ça on voit le bleu*/
+    max-height: 600px; 
+    object-fit: cover;/*pour que l'image s'agrandisse avec la fenêtre. Ca fait un effet zoom*/
+    min-height: 500px;/*permet de laisser un espace la ou l'image doit être chargée dans le cas ou elle mettrait du temps à charger*/
+    background-color: gray;/*la couleur de fond dans le cas ou l'image mettrais du temps à charger*/
+}
+
+.table{
+   position: absolute;
+   bottom : 0;
+   width: 100%;
+   color: white;
+   background-color:rgb(192, 144, 236, 0.5);
+   height: 50px;
+}
+
+.table td {
+    text-align: center;
+    font-size: 14px;
+    vertical-align: top; /*pour bouger le texte vers le haut*/
+
+}
+
+.table th{
+    font-size: 16px;
+    vertical-align: bottom;
+    padding-bottom: 4px;
+}
+
+.Ingredients{
+    /*background-color: lightcoral;*/
+   width: 100%;
+    display: inline-block;
+    margin-top: 1px;
+
+}
+
+
+.Recipe{
+    /*background-color: lightskyblue;*/
+    width: 100%;
+    margin-top: 1px;
+    
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 17px;
+    border-bottom: 5px solid rgb(192, 144, 236);/*la ligne sous le titre*/
+    padding-bottom: 5px;
+    
+}
+
+ul {
+    list-style: none;
+    padding-left: 5px;
+    
+ 
+}
+
+ul li {/*que les li du ul*/
+    border: 1px solid rgb(192, 144, 236);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+    
+}
+
+.Recipe p{
+    background-color:  rgb(192, 144, 236) ;
+    color: white;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-size: 14px;
+    padding: 4px;
+    font-weight: bold;
+    box-sizing: border-box;/*calcul la taille du box par apport au height et padding*/
+    border-radius: 50%;
+    margin: 0;/*si on ne fait pas ça le vertical align fait monter le text parce que la marge s'est rajouté par défault*/
+    
+}
+
+.Recipe td{
+    vertical-align: top;/*les numéros sont des td et on veut que les td soient en haut du text*/
+}
+
+.Recipe tr{/*pour que les ligne de la tables est le meme disctances entre quand la fenêtre diminue ou augmente. Sinon il y a des petits détails
+             qui ne vont pas*/
+     height: 40px; 
+          
+
+}
+
+.etape{ /*pour le texte*/
+    font-size: 14px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    max-width: 250px; /* ou toute autre valeur qui convient à votre mise en page */
+    min-width: 100px;
+    word-wrap: break-word; /* pour forcer le texte à passer à la ligne si nécessaire */
+    
+}
+
+
+*{overflow: auto;
+  
+}
+
+
+@media only screen and (min-width: 768px) {/*si l'ecran à une largeur minimal de 768px - style pour ordinateur*/
+
+    body{
+        background-color: rgb(192, 144, 236);
+       
+    }
+
+    div.contain { 
+        margin: 0px 10% 50px 10%; /*c'est la marge en dehors de la div* haut, droite, bas, gauche. On met des % quand on veut que la marge s'adapte à la page*/
+        padding: 30px;/*les marges à l'interieur de laa div, sur tout le contour.*/
+        min-width: 350px;
+    }
+
+    .table{
+        height: 70px;
+     }
+     
+     .table td {
+         font-size: 16px;
+           
+     }
+     
+     .table th{
+         font-size: 18px;
+     }
+
+     .Ingredients{
+         /*background-color: lightcoral;*/
+         width: 45%;/*pour réduire la taille de la colonne puisque celle de Recipe puisse venir se mettre à coté*/  
+           
+     }
+              
+     .Recipe{
+        /*background-color: lightskyblue;*/
+        float: right;/*pour que la colonne se mette à droite*/
+        width: 45%;
+        
+            
+    }
+              
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
